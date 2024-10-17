@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import RecipeCard from './components/RecipeCard';
 import SearchBar from './components/SearchBar';
 import RecipeList from './components/RecipeList';
 
