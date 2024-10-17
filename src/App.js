@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Recipe Finder</h1>
+      <h1>DishDiscover</h1>
       <SearchBar query={query} setQuery={setQuery} handleSearch={handleSearch} loading={loading} />
       {error && <p className="error">{error}</p>}
       <RecipeList recipes={recipes} />
