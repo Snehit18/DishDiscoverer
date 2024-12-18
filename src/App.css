@@ -1,120 +1,206 @@
-
+/* General Reset */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  background-color: #f8f4f1;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-
+/* Main Container */
 .app {
-  text-align: center;
-  margin: 0 auto;
   max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-
+/* Header */
 h1 {
-  color: #333;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: #5a4e3e;
   margin-bottom: 20px;
-  font-size: 2.5rem;
-  font-weight: 600;
 }
 
-
-input {
-  padding: 12px;
-  width: 300px;
-  margin-right: 10px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-input:focus {
-  border-color: #007bff;
+/* SearchBar */
+div input[type="text"],
+div input[type="number"],
+button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   outline: none;
+  box-sizing: border-box;
+}
+
+div input[type="text"] {
+  width: 300px;
+  max-width: 90%;
 }
 
 button {
-  padding: 12px 20px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
+  background-color: #ffeb3d;
+  color: #5a4e3e;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 10px 20px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ffd700;
 }
 
 button:disabled {
-  background-color: #b0bec5;
+  background-color: #ffeb3d;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
+/* Adding space between search input and button */
+div input[type="text"] + button {
+  margin-left: 10px;
+}
 
-.error {
-  color: #d9534f;
-  font-weight: 500;
+/* RecipeFilter */
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
   margin-top: 20px;
 }
 
+label {
+  font-weight: bold;
+  color: #5a4e3e;
+}
 
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+/* Match input[type="number"] appearance with search bar */
+input[type="number"] {
+  font-weight: bold;
+}
+
+/* RecipeList */
 .recipes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  justify-content: center;
+  padding: 20px;
 }
 
-
 .recipe {
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 10px;
-  width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  transition: 0.3s;
 }
 
 .recipe:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .recipe img {
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .recipe h2 {
-  color: #333;
-  font-size: 1.5rem;
-  margin: 10px 0;
+  font-size: 24px;
+  color: #5a4e3e;
 }
 
 .recipe p {
-  color: #666;
-  font-size: 1rem;
+  font-size: 16px;
+  color: #777;
   margin: 10px 0;
 }
 
 .recipe a {
-  color: #007bff;
+  display: inline-block;
   text-decoration: none;
-  font-weight: 500;
+  color: #ff5722;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
 }
 
 .recipe a:hover {
-  text-decoration: underline;
+  color: #ffab91;
+}
+
+/* LoadingSpinner */
+.spinner {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffeb3d;
+  padding: 50px;
+}
+
+/* ErrorMessage */
+.error-message {
+  background-color: #ffcdd2;
+  color: #b71c1c;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 15px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #5a4e3e;
+  color: #fff;
+  text-align: center;
+  padding: 0px 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Flexbox for Layout */
+@media (min-width: 768px) {
+  .filter {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .filter label {
+    margin-right: 10px;
+  }
+
+  .filter input[type="number"] {
+    width: 80px;
+  }
 }
