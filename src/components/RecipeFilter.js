@@ -9,7 +9,6 @@ const RecipeFilter = ({ calories, setCalories }) => {
         id="calories"
         value={calories}
         onChange={(e) => setCalories(e.target.value)}
-        placeholder="Enter max calories"
       />
     </div>
   );
